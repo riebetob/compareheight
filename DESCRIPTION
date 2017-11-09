@@ -1,0 +1,14 @@
+Package: compareheight
+Type: Package
+Title: Height difference calculater
+Version: 0.1.0
+Author: person("Tobias", "Riebe", email = "tobi-riebe@hotmail.de",
+                  role = c("aut", "cre"))
+Maintainer: The package maintainer <tobi-riebe@hotmail.de>
+Description: The package calculates the differnece between subjects in the 
+    popoulation and the (gender specific) mean of the population
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Imports: dplyr
