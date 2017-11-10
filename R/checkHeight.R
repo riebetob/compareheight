@@ -16,14 +16,14 @@ checkHeight <- function(students.input = students, sex.specific = TRUE){
     #Calculate the gender specific means
     women_mean_height = as.numeric(students.input %>%
                                      group_by(sex) %>%
-                                     summarise(mean(height)) %>%
+                                     summarise(compareheight::mean(height)) %>%
                                      filter(sex == "F") %>%
-                                     select("mean(height)"))
+                                     select("compareheight::mean(height)"))
     men_mean_height = as.numeric(students.input %>%
                                    group_by(sex) %>%
-                                   summarise(mean(height)) %>%
+                                   summarise(compareheight::mean(height)) %>%
                                    filter(sex == "M") %>%
-                                   select("mean(height)"))
+                                   select("compareheight::mean(height)"))
     #initialize an empty vector to save the genderspecific height differnces
     height_vector = c()
     #apply a function to the rows of the input dataframe
@@ -40,7 +40,7 @@ checkHeight <- function(students.input = students, sex.specific = TRUE){
       #initialize an empty vector to save the height differnces
       height_vector = c()
       #calculate the mean height of the whole population
-      mean_height = mean(students.input$height)
+      mean_height = compareheight::mean(students.input$height)
       #apply a function to the rows of the input dataframe
       height_vector = apply(students.input, MARGIN = 1,
                             FUN = function(student){
