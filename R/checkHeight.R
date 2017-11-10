@@ -49,7 +49,7 @@ checkHeight <- function(students.input = students, sex.specific = TRUE){
                             } )
       #create the final dataframe containing name od the students and the height differnces
       #multiple height differences by 100 to get values in cm
-      result.frame = data.frame("name" = students.input$name, "sexspec_height_diff" = height_vector*100)
+      result.frame = data.frame("name" = students.input$name, "height_diff" = height_vector*100)
   }
   #return the dataframe
   return(result.frame)
