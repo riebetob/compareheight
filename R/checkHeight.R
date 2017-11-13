@@ -8,6 +8,7 @@
 #' @return Difference in height to gender specific mean or the whole population.
 #' @examples
 #' checkHeight(students, TRUE)
+#' @import checkmate
 
 #' @export
 checkHeight <- function(students.input, sex.specific = TRUE, print.statement = FALSE){
