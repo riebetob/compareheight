@@ -10,7 +10,22 @@
 #' checkHeight(students, TRUE)
 
 #' @export
-checkHeight <- function(students.input = students, sex.specific = TRUE, print.statement = FALSE){
+checkHeight <- function(students.input, sex.specific = TRUE, print.statement = FALSE){
+  #Check if sex.specific is a logical value
+  assertLogical(sex.specific)
+  #Check if print.statement is a logical value
+  assertLogical(print.statement)
+  #Check if the Data Frame has at least 4 rows and 5 columns without missing values
+  assertDataFrame(students.input, min.rows = 4, ncols = 5, any.missing = FALSE)
+  #Check if first and second column are Numeric
+  assertNumeric(c(students.input[,1], students.input[,2]))
+  #Check if third column is numeric and has values between 1.30 and 2.40
+  assertNumeric(students.input[,3], lower = 1.29, upper = 2.41)
+  #Check if 4th column is of type factor and has values "M" and "F"
+  assertFactor(students.input[,4], levels = c("M","F"))
+  #Check if 5th column is Character
+  assertCharacter(students.input[,5])
+
   #Check if the sex specific height difference or the difference to the whole population should be calculated
   if(sex.specific == TRUE){
     #Calculate the gender specific means

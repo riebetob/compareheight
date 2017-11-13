@@ -4,7 +4,7 @@
 \alias{checkHeight}
 \title{Compare the height of persons in a dataset with the mean of the height of the other persons}
 \usage{
-checkHeight(students.input = students, sex.specific = TRUE)
+checkHeight(students.input, sex.specific = TRUE, print.statement = FALSE)
 }
 \arguments{
 \item{students.input}{A data.frame containig names and height of students}
