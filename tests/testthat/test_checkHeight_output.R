@@ -1,5 +1,5 @@
 #Set system language to english
-Sys.setenv(LANG = "en")
+#Sys.setenv(LANG = "en")
 
 test_that("Input and Output have same number of observations", {
   expect_equal(nrow(students), nrow(checkHeight(students)))
@@ -7,7 +7,8 @@ test_that("Input and Output have same number of observations", {
 
 test_that("Both options of sex.specific work equally", {
   students_test <- students
-  students_test[,3] <- 1.80
+  #All students get the same height
+  students_test$height <- 1.80
   expect_equal(checkHeight(students_test, sex.specific = TRUE)[,2],
                checkHeight(students_test, sex.specific = FALSE)[,2])
 })
@@ -31,10 +32,20 @@ test_that("Functioning of the argument check ", {
   expect_error(compareheight:::mean(NaN))
 })
 
+test_that(desc = "The Object can't be found if a  name is wrong", {
+            test_students = students
+            colnames(test_students)[3] = "servus"
+            expect_that(checkHeight(test_students), throws_error() )
+            })
+
+
 test_that("Throws error if argument is missing", {
   expect_error(checkHeight())
 })
 
-
+test_that("Check if print statement works correctly", {
+  expect_that(checkHeight(students,print.statement = TRUE),
+              prints_text("Yippie, I calculated the mean differences!"))
+})
 
 #testthat::test_dir("C:\\Users\\Tobias\\Documents\\Uni\\Innovationslabor_1718\\compareheight\\tests")
