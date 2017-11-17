@@ -1,6 +1,6 @@
 #Set system language to english
 #Sys.setenv(LANG = "en")
-
+library(dplyr)
 test_that("Input and Output have same number of observations", {
   expect_equal(nrow(students), nrow(checkHeight(students)))
 })
