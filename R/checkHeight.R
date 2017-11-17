@@ -9,6 +9,7 @@
 #' @examples
 #' checkHeight(students, TRUE)
 #' @import checkmate
+#' @importFrom magrittr %>%
 
 #' @export
 checkHeight <- function(students.input, sex.specific = TRUE, print.statement = FALSE){
