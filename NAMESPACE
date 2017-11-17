@@ -2,3 +2,4 @@
 
 export(checkHeight)
 import(checkmate)
+importFrom(magrittr,"%>%")
