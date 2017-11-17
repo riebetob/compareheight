@@ -6,8 +6,6 @@
 #' @param students.input A data.frame containig names and height of students
 #' @param sex.specific=TRUE A logical that tells if gender spcific mean or mean of whole population should be compared
 #' @return Difference in height to gender specific mean or the whole population.
-#' @examples
-#' checkHeight(students, TRUE)
 #' @import checkmate
 #' @importFrom magrittr %>%
 

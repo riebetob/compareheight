@@ -17,6 +17,3 @@ Difference in height to gender specific mean or the whole population.
 \description{
 Compare the height of persons in a dataset with the mean of the height of the other persons
 }
-\examples{
-checkHeight(students, TRUE)
-}
