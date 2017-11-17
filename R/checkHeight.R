@@ -32,12 +32,12 @@ checkHeight <- function(students.input, sex.specific = TRUE, print.statement = F
   if(sex.specific == TRUE){
     #Calculate the gender specific means
     women_mean_height = as.numeric(students.input %>%
-                                     group_by(sex) %>%
+                                     dplyr::group_by(sex) %>%
                                      summarise(compareheight:::mean(height)) %>%
                                      filter(sex == "F") %>%
                                      select("compareheight:::mean(height)"))
     men_mean_height = as.numeric(students.input %>%
-                                   group_by(sex) %>%
+                                   dplyr::group_by(sex) %>%
                                    summarise(compareheight:::mean(height)) %>%
                                    filter(sex == "M") %>%
                                    select("compareheight:::mean(height)"))
