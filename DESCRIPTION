@@ -7,6 +7,7 @@ Author: person("Tobias", "Riebe", email = "tobi-riebe@hotmail.de",
 Maintainer: The package maintainer <tobi-riebe@hotmail.de>
 Description: The package calculates the differnece between subjects in the 
     popoulation and the (gender specific) mean of the population
+Depends: R (>= 3.4.2)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
